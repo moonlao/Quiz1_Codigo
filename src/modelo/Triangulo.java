@@ -2,8 +2,8 @@ package modelo;
 
 public class Triangulo extends Figura{
 
-	public Triangulo(int tam, int posX, int posY, int dir, int valor, int tipo, int r, int g, int b) {
-		super(tam, posX, posY, dir, valor, tipo, r, g, b);
+	public Triangulo(int tam, int posX, int posY, int dir, int valor, int r, int g, int b) {
+		super(tam, posX, posY, dir, valor, r, g, b);
 		this.r = 179;
 		this.g = 27;
 		this.b = 240;
