@@ -4,8 +4,9 @@ import java.io.*;
 import java.util.ArrayList;
 
 import modelo.*;
+import processing.core.PApplet;
 
-public class Control {
+public class Control extends PApplet{
 	
 	Lienzo lienzo;
 	
@@ -47,13 +48,27 @@ public class Control {
 	public static void main(String[] args) {
 
 	}
-
-	public void settings() {
-
-	}
 	
 	public void iniciar() {
-		-------c======3
+		
+	}
+	
+	public void settings() {
+		size(800,800);
+	}
+	
+	public void setup() {
+		
+	}
+	
+	public void draw() {
+		
+	}
+	
+	public void mousePressed() {
+		if (mouseButton == RIGHT) {
+			
+		}
 	}
 
 }
