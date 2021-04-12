@@ -15,9 +15,9 @@ public class Circulo extends Figura{
 
 	public Circulo(int tam, int posX, int posY, int dir, int valor, int r, int g, int b) {
 		super(tam, posX, posY, dir, valor, r, g, b);
-		super.r = 27;
-		super.g = 240;
-		super.b = 179;
+		this.r = (int) ((int) 1 + Math.random()*255);
+		this.g = (int) ((int) 1 + Math.random()*255);
+		this.b = (int) ((int) 1 + Math.random()*255);
 		isMoving = true;
 	}
 

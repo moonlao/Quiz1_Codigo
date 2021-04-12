@@ -40,13 +40,14 @@ public class Lienzo {
 					//	System.out.println("Si entra");
 						if (calcularInterseccion(a,b)) {
 							try {
-								Triangulo c = new Triangulo((int) (10 + (Math.random() * 80)), b.getPosX(), b.getPosY(), 0,
-										a.getValor() + b.getValor(), b.getR(), b.getG(), b.getB());
+								int suma = a.getValor()+ b.getValor();
+								Triangulo c = new Triangulo((int) (30 + (Math.random() * 90)), b.getPosX(), b.getPosY(), 0,
+										suma, b.getR(), b.getG(), b.getB());
 								figuras.add(c);
 								figuras.remove(j);
 								figuras.remove(i);
 							} catch (Exception exception){
-								exception.printStackTrace();
+								
 							}
 							
 						}

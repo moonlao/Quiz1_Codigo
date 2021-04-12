@@ -23,7 +23,8 @@ public class VistaFiguras {
 				app.ellipse(c.getPosX(), c.getPosY(), c.getTam(), c.getTam());
 				app.fill(0);
 				app.textSize(c.getTam()/2);
-				app.text(c.getValor(), c.getPosX()+c.getTam()/2, c.getPosY()-c.getTam()/2);
+				app.textAlign(app.CENTER,app.CENTER);
+				app.text(c.getValor(), (c.getPosX()+c.getTam()/2)-30, (c.getPosY()-c.getTam()/2)+30);
 			}else if(a.get(i) instanceof Cuadrado) {
 				Cuadrado c = (Cuadrado) a.get(i);
 			//	System.out.println("Cuadrado posX"+c.getPosX()+" PosY"+c.getPosY());
@@ -32,7 +33,8 @@ public class VistaFiguras {
 				app.rect(c.getPosX(), c.getPosY(), c.getTam(), c.getTam());
 				app.fill(0);
 				app.textSize(c.getTam()/2);
-				app.text(c.getValor(), c.getPosX()+c.getTam()/2, c.getPosY()-c.getTam()/2);
+				app.textAlign(app.CENTER,app.CENTER);
+				app.text(c.getValor(), c.getPosX()+c.getTam()/2, c.getPosY()+c.getTam()/2);
 				
 			}else if(a.get(i) instanceof Triangulo) {
 				Triangulo c = (Triangulo) a.get(i);
@@ -41,7 +43,8 @@ public class VistaFiguras {
 				app.triangle(c.getPosX()+c.getTam(), c.getPosY(), c.getPosX()+(c.getTam())/2, c.getPosY()-c.getTam(), c.getPosX(), c.getPosY() );
 				app.fill(0);
 				app.textSize(c.getTam()/2);
-				app.text(c.getValor(), (c.getPosX()+c.getTam()/2), c.getPosY()-c.getTam()/2);
+				app.textAlign(app.CENTER,app.CENTER);
+				app.text(c.getValor(), (c.getPosX()+c.getTam()/2)-3, (c.getPosY()-c.getTam()/2)+3);
 				
 			}
 		}

@@ -6,9 +6,9 @@ public class Cuadrado extends Figura {
 
 	public Cuadrado(int tam, int posX, int posY, int dir, int valor, int r, int g, int b) {
 		super(tam, posX, posY, dir, valor, r, g, b);
-		this.r = 240;
-		this.g = 159;
-		this.b = 27;
+		this.r = (int) ((int) 1 + Math.random()*255);
+		this.g = (int) ((int) 1 + Math.random()*255);
+		this.b = (int) ((int) 1 + Math.random()*255);
 		isMoving = true;
 	}
 
