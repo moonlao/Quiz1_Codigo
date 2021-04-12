@@ -24,14 +24,14 @@ public class Cuadrado extends Figura {
 	void mover() {
 		if(isMoving) {
 			if (this.dir == 1) {
-				posY += 10;
-				if (posY >= 800) {
+				posY += 1;
+				if (posY >= 800 - tam) {
 					dir = -1;
 				}
 			}
 			
 			if (this.dir == -1) {
-				posY -= 10;
+				posY -= 1;
 				if (posY <= 0) {
 					dir = 1;
 				}

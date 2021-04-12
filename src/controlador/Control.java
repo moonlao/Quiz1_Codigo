@@ -25,7 +25,7 @@ public class Control extends PApplet{
 			FileReader fr = new FileReader(file);
 			BufferedReader br = new BufferedReader(fr);
 			String line = br.readLine();
-			System.out.println("Linea : "+line);
+		//	System.out.println("Linea : "+line);
 			while (line != null) {
 				
 			      String[] linea = line.split(" ");
@@ -65,11 +65,11 @@ public class Control extends PApplet{
 	
 	public void draw() {
 		background(0);
-		lienzo.mover();
-		
+        System.out.println("draw"); 
 		vista.pintarFiguras(lienzo.getFiguras());
-		
+		lienzo.mover();
 		lienzo.choque();
+		
 		
 	}
 	

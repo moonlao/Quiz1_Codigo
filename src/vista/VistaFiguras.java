@@ -18,19 +18,20 @@ public class VistaFiguras {
 	
 			if(a.get(i) instanceof Circulo) {
 				Circulo c = (Circulo) a.get(i);
-				System.out.println("Circulo posX"+c.getPosX()+" PosY"+c.getPosY());
+			//	System.out.println("Circulo posX"+c.getPosX()+" PosY"+c.getPosY());
 				app.fill(c.getR(),c.getG(), c.getB());
 				app.ellipse(c.getPosX(), c.getPosY(), c.getTam(), c.getTam());
 			}else if(a.get(i) instanceof Cuadrado) {
 				Cuadrado c = (Cuadrado) a.get(i);
-				System.out.println("Cuadrado posX"+c.getPosX()+" PosY"+c.getPosY());
+			//	System.out.println("Cuadrado posX"+c.getPosX()+" PosY"+c.getPosY());
+				
 				app.fill(c.getR(),c.getG(), c.getB());
-				app.ellipse(c.getPosX(), c.getPosY(), c.getTam(), c.getTam());
+				app.rect(c.getPosX(), c.getPosY(), c.getTam(), c.getTam());
 			}else if(a.get(i) instanceof Triangulo) {
 				Triangulo c = (Triangulo) a.get(i);
-				System.out.println("Triangulo posX"+c.getPosX()+" PosY"+c.getPosY());
+			//	System.out.println("Triangulo posX"+c.getPosX()+" PosY"+c.getPosY());
 				app.fill(c.getR(),c.getG(), c.getB());
-				app.ellipse(c.getPosX(), c.getPosY(), c.getTam(), c.getTam());
+				app.triangle(c.getPosX(), c.getPosY(), c.getPosX()+(c.getTam())/2, c.getPosY()+c.getTam(), c.getPosX()+c.getTam(), c.getPosY());
 			}
 		}
 		

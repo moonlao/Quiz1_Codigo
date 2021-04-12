@@ -31,16 +31,24 @@ public class Lienzo {
 	public void choque() {
 		for (int i = 0; i < figuras.size(); i++) {
 			Figura a = figuras.get(i);
+		//	System.out.println((a instanceof Triangulo)+"");
 			if (!(a instanceof Triangulo)) {
 				for (int j = 0; j < figuras.size(); j++) {
-					Figura b = figuras.get(i);
-					if (!(b instanceof Triangulo) && (!b.equals(a))) {
-						if (calcularInterseccion(a.getTam(), a.getPosX(), a.getPosY(), b.getTam(), b.getPosX(),
-								b.getPosY())) {
-							Triangulo c = new Triangulo((int) (10 + (Math.random() * 80)), b.getPosX(), b.getPosY(), 0,
-									a.getValor() + b.getValor(), b.getR(), b.getG(), b.getB());
-							figuras.remove(j);
-							figuras.remove(i);
+					Figura b = figuras.get(j);
+					//System.out.println((a instanceof Triangulo)+" Dos "+b.equals(a));
+					if (!(b instanceof Triangulo) && (j!=i)) {
+					//	System.out.println("Si entra");
+						if (calcularInterseccion(a,b)) {
+							try {
+								Triangulo c = new Triangulo((int) (10 + (Math.random() * 80)), b.getPosX(), b.getPosY(), 0,
+										a.getValor() + b.getValor(), b.getR(), b.getG(), b.getB());
+								figuras.add(c);
+								figuras.remove(j);
+								figuras.remove(i);
+							} catch (Exception exception){
+								exception.printStackTrace();
+							}
+							
 						}
 
 					}
@@ -60,14 +68,21 @@ public class Lienzo {
 		}
 	
 
-	public boolean calcularInterseccion(int tam1, int x1, int y1, int tam2, int x2, int y2) {
-		boolean resp;
-		if (x1 + tam1 / 2 >= x2 + tam2 / 2 && x1 + tam1 / 2 <= x2 - tam2 / 2 && y1 + tam1 / 2 >= y2 + tam2 / 2
-				&& y1 + tam1 / 2 <= y2 - tam2 / 2) {
-			resp = true;
-		} else {
-			resp = false;
-		}
+	public boolean calcularInterseccion(Figura a, Figura b) {
+		boolean resp =false;
+		int posXA = a.getPosX();
+		int posYA = a.getPosY();
+		int posXB = b.getPosX();
+		int posYB = b.getPosY();
+		int zB = b.getTam();
+		int zA = a.getTam();
+		
+	    if(posXB >= posXA && posXB <= posXA+zA) {
+	    	if(posYB >= posYA && posYB <= posYA+zA) {
+	    		resp = true;
+	    	}
+	    }
+		
 		return resp;
 	}
 }

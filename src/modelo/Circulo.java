@@ -25,14 +25,14 @@ public class Circulo extends Figura{
 	void mover() {
 		if (isMoving) {
 			if (this.dir == 1) {
-				posX += 10;
-				if (posX >= 800) {
+				posX += 1;
+				if (posX >= 800 - tam) {
 					dir = -1;
 				}
 			}
 			
 			if (this.dir == -1) {
-				posX -= 10;
+				posX -= 1;
 				if (posX <= 0) {
 					dir = 1;
 				}
