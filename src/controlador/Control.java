@@ -24,8 +24,10 @@ public class Control extends PApplet{
 			File file = new File("./texto/instrucciones.txt");
 			FileReader fr = new FileReader(file);
 			BufferedReader br = new BufferedReader(fr);
-			String line;
-			while ((line = br.readLine()) != null) {
+			String line = br.readLine();
+			System.out.println("Linea : "+line);
+			while (line != null) {
+				
 			      String[] linea = line.split(" ");
 			      if(linea[0].equals("Cuadrado")) {
 						Cuadrado cuad = new Cuadrado(Integer.parseInt(linea[1]), Integer.parseInt(linea[2]),
@@ -38,11 +40,12 @@ public class Control extends PApplet{
 								Integer.parseInt(linea[5]), 0, 0, 0);
 			    	  	inputText.add(cir);
 			      }
+			      line = br.readLine();
 			}
 			fr.close();
 			lienzo.inicializar(inputText);
 		} catch (Exception e) {
-
+              e.printStackTrace();
 		}
 	}
 
@@ -53,15 +56,19 @@ public class Control extends PApplet{
 	
 	public void settings() {
 		size(800,800);
-	}
-	
-	public void setup() {
 		
 	}
 	
+	public void setup() {
+		cargar();
+	}
+	
 	public void draw() {
+		background(0);
 		lienzo.mover();
+		
 		vista.pintarFiguras(lienzo.getFiguras());
+		
 		lienzo.choque();
 		
 	}
