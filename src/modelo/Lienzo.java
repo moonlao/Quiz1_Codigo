@@ -68,6 +68,24 @@ public class Lienzo {
 		}
 	
 
+	public boolean calcularInterseccionPuntos(Figura a, int x, int y) {
+		boolean resp =false;
+		int posXA = a.getPosX();
+		int posYA = a.getPosY();
+		int posXB = x;
+		int posYB = y;
+		int zB = 0;
+		int zA = a.getTam();
+		
+	    if(posXB >= posXA && posXB <= posXA+zA) {
+	    	if(posYB >= posYA && posYB <= posYA+zA) {
+	    		resp = true;
+	    	}
+	    }
+		
+		return resp;
+	}
+	
 	public boolean calcularInterseccion(Figura a, Figura b) {
 		boolean resp =false;
 		int posXA = a.getPosX();

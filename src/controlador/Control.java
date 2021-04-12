@@ -64,7 +64,7 @@ public class Control extends PApplet{
 	}
 	
 	public void draw() {
-		background(0);
+		background(255);
         System.out.println("draw"); 
 		vista.pintarFiguras(lienzo.getFiguras());
 		lienzo.mover();
@@ -75,6 +75,20 @@ public class Control extends PApplet{
 	
 	public void mousePressed() {
 		if (mouseButton == RIGHT) {
+			for (int i = 0; i < lienzo.getFiguras().size(); i++) {
+				if(lienzo.getFiguras().get(i) instanceof Circulo) {
+					Circulo circulo = (Circulo) lienzo.getFiguras().get(i);
+					if(lienzo.calcularInterseccionPuntos(circulo, mouseX, mouseY)) {
+						circulo.setMoving(false);
+					}
+				}
+				if(lienzo.getFiguras().get(i) instanceof Cuadrado) {
+					Cuadrado cuadrado = (Cuadrado) lienzo.getFiguras().get(i);
+					if(lienzo.calcularInterseccionPuntos(cuadrado, mouseX, mouseY)) {
+						cuadrado.setMoving(false);
+					}
+				}
+			}
 			
 		}
 	}
