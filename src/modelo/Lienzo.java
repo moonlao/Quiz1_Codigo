@@ -6,10 +6,28 @@ public class Lienzo {
 
 	ArrayList<Figura> figuras;
 	
+	public ArrayList<Figura> getFiguras() {
+		return figuras;
+	}
+
+
+	public void setFiguras(ArrayList<Figura> figuras) {
+		this.figuras = figuras;
+	}
+
+
 	public Lienzo () {
 		figuras = new ArrayList<Figura>();
 	}
 
+	
+	//Punto de fallo
+	public void mover() {
+		for (int i = 0; i < figuras.size(); i++) {
+			figuras.get(i).mover();
+		}
+	}
+	
 	public void choque() {
 		for (int i = 0; i < figuras.size(); i++) {
 			Figura a = figuras.get(i);

@@ -11,17 +11,16 @@ public class Control extends PApplet{
 	
 	Lienzo lienzo;
 	VistaFiguras vista;
-	
 	ArrayList<Figura> inputText;
 
 	public Control() {
 		 inputText = new ArrayList<Figura>();
 		 lienzo = new Lienzo();
+		 vista = new VistaFiguras(this);
 	}
 	
 	public void cargar() {
 		try {
-           
 			File file = new File("./texto/instrucciones.txt");
 			FileReader fr = new FileReader(file);
 			BufferedReader br = new BufferedReader(fr);
@@ -51,9 +50,6 @@ public class Control extends PApplet{
 		PApplet.main("controlador.Control");
 	}
 	
-	public void iniciar() {
-		
-	}
 	
 	public void settings() {
 		size(800,800);
@@ -64,7 +60,10 @@ public class Control extends PApplet{
 	}
 	
 	public void draw() {
-		//pintarFiguras
+		lienzo.mover();
+		vista.pintarFiguras(lienzo.getFiguras());
+		lienzo.choque();
+		
 	}
 	
 	public void mousePressed() {

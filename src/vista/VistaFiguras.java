@@ -8,6 +8,7 @@ import processing.core.PApplet;
 public class VistaFiguras {
 	
 	private PApplet app;
+	
 	public VistaFiguras(PApplet app) {
 		this.app = app;
 	}
