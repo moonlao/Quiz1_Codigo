@@ -98,13 +98,7 @@ public abstract class Figura {
 
 	
 
-	public boolean isQuieto() {
-		return quieto;
-	}
 
-	public void setQuieto(boolean quieto) {
-		this.quieto = quieto;
-	}
 
 
 	

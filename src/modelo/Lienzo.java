@@ -5,6 +5,10 @@ import java.util.ArrayList;
 public class Lienzo {
 
 	ArrayList<Figura> figuras;
+	
+	public Lienzo () {
+		figuras = new ArrayList<Figura>();
+	}
 
 	public void choque() {
 		for (int i = 0; i < figuras.size(); i++) {

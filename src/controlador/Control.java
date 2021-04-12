@@ -13,12 +13,13 @@ public class Control {
 
 	public Control() {
 		 inputText = new ArrayList<Figura>();
+		 lienzo = new Lienzo();
 	}
 	
 	public void cargar() {
 		try {
            
-			File file = new File("Demo.txt");
+			File file = new File("./texto/instrucciones.txt");
 			FileReader fr = new FileReader(file);
 			BufferedReader br = new BufferedReader(fr);
 			String line;
@@ -37,6 +38,7 @@ public class Control {
 			      }
 			}
 			fr.close();
+			lienzo.inicializar(inputText);
 		} catch (Exception e) {
 
 		}
@@ -48,6 +50,10 @@ public class Control {
 
 	public void settings() {
 
+	}
+	
+	public void iniciar() {
+		-------c======3
 	}
 
 }
