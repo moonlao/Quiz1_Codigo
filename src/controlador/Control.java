@@ -5,10 +5,12 @@ import java.util.ArrayList;
 
 import modelo.*;
 import processing.core.PApplet;
+import vista.VistaFiguras;
 
 public class Control extends PApplet{
 	
 	Lienzo lienzo;
+	VistaFiguras vista;
 	
 	ArrayList<Figura> inputText;
 
@@ -46,7 +48,7 @@ public class Control extends PApplet{
 	}
 
 	public static void main(String[] args) {
-
+		PApplet.main("controlador.Control");
 	}
 	
 	public void iniciar() {
@@ -62,7 +64,7 @@ public class Control extends PApplet{
 	}
 	
 	public void draw() {
-		
+		//pintarFiguras
 	}
 	
 	public void mousePressed() {
